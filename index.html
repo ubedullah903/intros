@@ -19,9 +19,10 @@
         }
         .packages {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
-            padding: 3rem;
+            padding: 2rem;
         }
         .card {
             background: white;
@@ -29,7 +30,8 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 280px;
+            width: 90%;
+            max-width: 300px;
             transition: transform 0.3s ease;
         }
         .card:hover {
@@ -62,11 +64,20 @@
         .upload-section {
             display: none;
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
         }
         input[type="file"] {
             margin: 1rem auto;
             display: block;
+        }
+        form {
+            max-width: 90%;
+            margin: auto;
+        }
+        @media (min-width: 768px) {
+            .card {
+                width: 280px;
+            }
         }
     </style>
 </head>
