@@ -1,22 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Coming Soon!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Investment Packages</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #f5f5f5;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f9;
+            color: #333;
         }
-        h1 {
-            color: #ff6b6b;
-            font-size: 3em;
+        header {
+            background: linear-gradient(90deg, #141e30, #243b55);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        .packages {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        .diamond { border-top: 6px solid deepskyblue; }
+        .golden { border-top: 6px solid gold; }
+        .silver { border-top: 6px solid silver; }
+        .card h2 {
+            margin-bottom: 1rem;
+        }
+        .card p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #141e30;
+            color: white;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1c2b4a;
+        }
+        .upload-section {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+        input[type="file"] {
+            margin: 1rem auto;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <h1>🚀 Coming Soon!</h1>
-    <p>ada Ubedullah bha jaldi kar JAM-e-LAZZAT dekha hahahah!</p>
+
+<header>
+    <h1>Choose Your Premium Investment Package</h1>
+</header>
+
+<section class="packages" id="package-section">
+    <div class="card diamond">
+        <h2>💎 Diamond Package</h2>
+        <p>Investment: $100</p>
+        <p>Return: 20%</p>
+        <button onclick="showUploadForm(100, 20)">Invest Now</button>
+    </div>
+    <div class="card golden">
+        <h2>🏆 Golden Package</h2>
+        <p>Investment: $100</p>
+        <p>Return: 15%</p>
+        <button onclick="showUploadForm(100, 15)">Invest Now</button>
+    </div>
+    <div class="card silver">
+        <h2>🥈 Silver Package</h2>
+        <p>Investment: $100</p>
+        <p>Return: 10%</p>
+        <button onclick="showUploadForm(100, 10)">Invest Now</button>
+    </div>
+</section>
+
+<section class="upload-section" id="upload-section">
+    <h2>Upload Your Payment Proof</h2>
+    <p id="investment-details"></p>
+    <form>
+        <input type="file" accept="image/*" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<script>
+    function showUploadForm(amount, percent) {
+        document.getElementById("package-section").style.display = "none";
+        document.getElementById("upload-section").style.display = "block";
+        document.getElementById("investment-details").innerText =
+            `You selected a package of $${amount} with ${percent}% return.`;
+    }
+</script>
+
 </body>
 </html>
